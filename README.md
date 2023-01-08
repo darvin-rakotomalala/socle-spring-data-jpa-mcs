@@ -1,5 +1,5 @@
 ## Projet socle spring data jpa
-Dans ce repo, un projet socle de base Spring Boot data JPA/Hibernate qui vise à respecter les bonnes pratiques de développement Java, Spring Boot et Api Rest (clean architecture, concepts SOLID et Clean Code). C'est un projet réutilisable.
+Dans ce repo, un projet socle de base Spring Boot Data JPA/Hibernate qui vise à respecter les bonnes pratiques de développement Java, Spring Boot et Api Rest (clean architecture, concepts SOLID et Clean Code). C'est un projet réutilisable.
 
 ### Technologies
 ---
