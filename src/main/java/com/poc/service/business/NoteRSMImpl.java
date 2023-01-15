@@ -32,7 +32,7 @@ public class NoteRSMImpl implements NoteRSM {
             }
             return optionalNote.get();
         } catch (Exception e) {
-            log.error("Error getNoteById : {} : {}", e.getMessage(), e);
+            log.error("Error getNoteById : {} {}", e.getMessage(), e);
             throw e;
         }
     }
@@ -47,7 +47,7 @@ public class NoteRSMImpl implements NoteRSM {
                 return noteRepository.findByTitleContainingIgnoreCase(title, pageable);
             }
         } catch (Exception e) {
-            log.error("Error getAllNotesByTitle : {} : {}", e.getMessage(), e);
+            log.error("Error getAllNotesByTitle : {} {}", e.getMessage(), e);
             throw e;
         }
     }

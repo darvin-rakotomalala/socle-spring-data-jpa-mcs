@@ -24,7 +24,7 @@ public class NoteCUDSMImpl implements NoteCUDSM {
             log.info("----- createOrUpdateNote");
             return noteRepository.save(note);
         } catch (Exception e) {
-            log.error("Error createOrUpdateNote : {} : {}", e.getMessage(), e);
+            log.error("Error createOrUpdateNote : {} {}", e.getMessage(), e);
             throw e;
         }
     }
@@ -35,7 +35,7 @@ public class NoteCUDSMImpl implements NoteCUDSM {
             log.info("----- saveAllNotes");
             return noteRepository.saveAll(notes);
         } catch (Exception e) {
-            log.error("Error saveAllNotes : {} : {}", e.getMessage(), e);
+            log.error("Error saveAllNotes : {} {}", e.getMessage(), e);
             throw e;
         }
     }
@@ -47,8 +47,9 @@ public class NoteCUDSMImpl implements NoteCUDSM {
             Note noteFound = noteRSM.getNoteById(id);
             noteRepository.deleteById(noteFound.getId());
         } catch (Exception e) {
-            log.error("Error deleteNoteById : {} : {}", e.getMessage(), e);
+            log.error("Error deleteNoteById : {} {}", e.getMessage(), e);
             throw e;
         }
     }
+
 }
