@@ -1,11 +1,11 @@
 package com.poc.controller;
 
-import com.poc.validation.NoteValidator;
+import com.poc.constraint.validation.NoteValidator;
 import com.poc.model.dto.NoteDTO;
 import com.poc.service.application.NoteCUDSA;
 import com.poc.service.application.NoteRSA;
 import com.poc.utils.HelpPage;
-import io.swagger.annotations.ApiOperation;
+import io.swagger.v3.oas.annotations.Operation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -29,25 +29,25 @@ public class NoteController {
         webDataBinder.setValidator(noteValidator);
     }
 
-    @ApiOperation(value = "WS used to create note")
+    @Operation(summary = "WS used to create note")
     @PostMapping
     public NoteDTO createNote(@RequestBody @Validated NoteDTO noteDTO) {
         return noteCUDSA.createNote(noteDTO);
     }
 
-    @ApiOperation(value = "WS used to save all notes")
+    @Operation(summary = "WS used to save all notes")
     @PostMapping("/saveAll")
     public List<NoteDTO> saveAllNotes(@RequestBody List<NoteDTO> notes) {
         return noteCUDSA.saveAllNotes(notes);
     }
 
-    @ApiOperation(value = "WS used to update note")
+    @Operation(summary = "WS used to update note")
     @PutMapping
     public NoteDTO updateNote(@RequestBody @Validated NoteDTO noteDTO) {
         return noteCUDSA.updateNote(noteDTO);
     }
 
-    @ApiOperation(value = "WS used to get all users")
+    @Operation(summary = "WS used to get all notes")
     @GetMapping
     public HelpPage<NoteDTO> getAllNotes(
             @RequestParam(name = "title", required = false) String title,
@@ -57,13 +57,13 @@ public class NoteController {
         return noteRSA.getAllNotesByTitle(title, pageable);
     }
 
-    @ApiOperation(value = "WS used to get note by id")
+    @Operation(summary = "WS used to get note by id")
     @GetMapping("/{id}")
     public NoteDTO getNoteById(@PathVariable("id") Long id) {
         return noteRSA.getNoteById(id);
     }
 
-    @ApiOperation(value = "WS used to delete note by id")
+    @Operation(summary = "WS used to delete note by id")
     @DeleteMapping("/{id}")
     public String deleteNoteById(@PathVariable("id") Long id) {
         noteCUDSA.deleteNoteById(id);

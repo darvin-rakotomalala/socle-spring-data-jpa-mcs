@@ -1,4 +1,4 @@
-package com.poc.mapper;
+package com.poc.common.mapper;
 
 import com.poc.utils.HelpPage;
 import org.springframework.data.domain.Page;
@@ -18,8 +18,7 @@ public interface DtoMapper<D, E> {
 
     default HelpPage<D> toDTO(Page<E> enityPage, Pageable pageable) {
         List<D> dtoList = toDTO(enityPage.getContent());
-        HelpPage<D> dtoPage = new HelpPage<>(dtoList, pageable, enityPage.getTotalElements());
-        return dtoPage;
+        return new HelpPage<>(dtoList, pageable, enityPage.getTotalElements());
     }
 
 }

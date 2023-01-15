@@ -24,4 +24,5 @@ public class NoteRSAImpl implements NoteRSA {
     public HelpPage<NoteDTO> getAllNotesByTitle(String title, Pageable pageable) {
         return noteMapper.toDTO(noteRSM.getAllNotesByTitle(title, pageable), pageable);
     }
+
 }
