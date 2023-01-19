@@ -9,9 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.poc</groupId>
-    <artifactId>new-jpa-mcs</artifactId>
+    <artifactId>socle-spring-data-jpa-mcs</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>new-jpa-mcs</name>
+    <name>socle-spring-data-jpa-mcs</name>
     <description>PoC project for Spring Boot</description>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

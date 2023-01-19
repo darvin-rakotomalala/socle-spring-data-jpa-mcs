@@ -4,7 +4,7 @@ Dans ce repo, un projet socle de base Spring Boot Data JPA/Hibernate qui vise à
 ### Technologies
 ---
 - Java 11
-- Spring Boot 2.7.3
+- Spring Boot 2.7.7
 - Spring Data JPA
 - Lombok
 - Maven 3+
